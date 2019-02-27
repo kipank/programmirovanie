@@ -1,4 +1,6 @@
+
 #include <stdio.h>
+#include<iostream>
 
 int main(void)
 
@@ -23,8 +25,8 @@ r = D*R/H;
 V = (Pi*R*R*H / 3) - (Pi*r*r*D / 3);
 
 printf("V = %.3f/n/n",V);
+system("pause");
 
 return 0;
 
 }
- 
