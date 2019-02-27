@@ -1,0 +1,29 @@
+#include <stdio.h>
+
+int main(void)
+
+{
+
+float H, D, R, r, V, Pi = 3.14;
+
+printf("R = ");
+
+scanf_s("%f",&R);
+
+printf("H = ");
+
+scanf_s("%f",&H);
+
+printf("D = ");
+
+scanf_s("%f",&D);
+
+r = D*R/H;
+
+V = (Pi*R*R*H / 3) - (Pi*r*r*D / 3);
+
+printf("V = %.3f/n/n",V);
+
+return 0;
+
+}
