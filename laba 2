@@ -1,0 +1,28 @@
+#include<stdio.h> 
+#include<stdlib.h> 
+
+int main(void) 
+{ 
+float x; 
+float s; 
+float T; //очередной элемент ряда 
+int n; 
+int k; 
+
+printf("n=\n "); 
+scanf_s("%d", &n); 
+printf("x= \n"); 
+scanf_s("%f", &x); 
+
+T = 1.0; 
+s = 1.0; 
+
+for(k=1.0; k<n; k++) 
+{ 
+T = (-1.0)*x*x*T /((2.0 * k - 1.0)*(2.0 * k)); 
+s = s + T; 
+} 
+printf("s=%f", s); 
+system("pause"); 
+return 0; 
+}
