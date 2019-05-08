@@ -1,0 +1,31 @@
+#include <stdio.h>
+#include  <stdlib.h>
+#include   <time.h>
+#define N 10
+
+int main(void)
+{
+	int s[N];
+	int i,m=0;
+	int sum;
+	srand(time(NULL));
+	for (i = 0; i < N; s[i] = (rand() % 10), i++);
+	for (i = 0; i < N; printf("%d ",s[i]), i++);
+	printf("\n");
+	for (i = 0; i < N - 1; i++)
+	{
+		sum = s[i] + s[i + 1];
+		if (sum > m)
+			m = sum;
+	}
+	for (i = 1; i < N - 1; i++)
+	{
+		if (s[i] + s[i + 1] == m)
+		{
+			printf("%d %d<== max\n", s[i], s[i + 1]);
+				break;
+		};
+	}
+	getchar();
+	return 0;
+}
