@@ -1,0 +1,50 @@
+#include <stdio.h>
+int lengt(int a);
+void binary_print(long a);
+main()
+{
+	unsigned int mask_1,mask_2,mask_3=0xffffffff;
+	int i=0,N,l;
+	int K=0;
+	scanf("%d",&N);
+	binary_print(N);
+	l=lengt(N);
+	mask_1=0x1;
+	mask_1<<=l;
+	mask_2=0x1;
+	for(i=0; i <= l; i++)
+	{
+
+        if(mask_2 & N)
+        {
+            K|=mask_1;
+        }
+        mask_1>>=1;
+        mask_2<<=1;
+	}
+	binary_print(K);
+	return 0;
+}
+	int lengt ( int num )
+	{
+	int i;
+	for(i=0; num!=0; i++)
+	num=num/2;
+	return i-1;
+}
+void binary_print(long a)
+{
+	unsigned mask = 0x80000000;
+	printf("binary number: ");
+	for (int i = 1; i <= (sizeof(a) * 8); i++)
+	{
+		if (a & mask)
+			printf("1");
+		else
+			printf("0");
+		if ((i % 8) == 0)
+			printf(" ");
+		mask = mask>>1;
+	}
+	printf("\n");
+}
