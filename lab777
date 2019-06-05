@@ -1,18 +1,16 @@
 #include <stdio.h>
-int lengt(int a);
 void binary_print(long a);
 main()
 {
-	unsigned int mask_1,mask_2,mask_3=0xffffffff;
+	unsigned int mask_1,mask_2;
 	int i=0,N,l;
 	int K=0;
 	scanf("%d",&N);
 	binary_print(N);
-	l=lengt(N);
 	mask_1=0x1;
-	mask_1<<=l;
+	mask_1<<=31;
 	mask_2=0x1;
-	for(i=0; i <= l; i++)
+	for(i=0; i <= 32; i++)
 	{
 
         if(mask_2 & N)
@@ -24,13 +22,6 @@ main()
 	}
 	binary_print(K);
 	return 0;
-}
-	int lengt ( int num )
-	{
-	int i;
-	for(i=0; num!=0; i++)
-	num=num/2;
-	return i-1;
 }
 void binary_print(long a)
 {
